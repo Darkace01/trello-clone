@@ -26,12 +26,11 @@ export async function POST(request: Request) {
     });
 
     const { data } = response;
-    console.log(data.choices[0].message);
     return NextResponse.json(data.choices[0].message);
   } catch (error) {
-    console.log('error', error);
-
     // mimic response expected by calling function
-    return NextResponse.json({ content: 'Could not connect with ChatGPT' });
+    return NextResponse.json({
+      content: 'GPT is summarising your tasks for the day...',
+    });
   }
 }

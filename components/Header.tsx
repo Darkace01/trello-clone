@@ -20,8 +20,6 @@ function Header() {
     setLoading(true);
 
     const fetchSuggestionFunc = async () => {
-      console.log('fetching suggestions');
-      console.log(JSON.stringify(board));
       const suggestion = await fetchSuggestion(board);
       setSuggestion(suggestion);
       setLoading(false);
